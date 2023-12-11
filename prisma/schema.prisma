@@ -9,8 +9,7 @@ datasource db {
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model products {
-  id              Int       @id @default(autoincrement()) @db.UnsignedInt
-  brand_name      String    @default("") @db.VarChar(50)
-  product_name    String    @default("") @db.VarChar(100)
-  discontinued_at DateTime? @db.Date
+  id           Int    @id @default(autoincrement()) @db.UnsignedInt
+  brand_name   String @default("") @db.VarChar(50)
+  product_name String @default("") @db.VarChar(100)
 }
