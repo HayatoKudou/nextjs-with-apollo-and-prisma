@@ -4,7 +4,7 @@ import {CreateProductDocument, Product, ProductsDocument} from "@/graphql/genera
 import {useMutation} from "@apollo/client";
 
 const Index = () => {
-  const [createProductMutation] = useMutation(CreateProductDocument);
+  const [createProduct] = useMutation(CreateProductDocument);
   const [inputValue, setInputValue] = React.useState({
     brandName: '',
     productName: ''
@@ -24,7 +24,7 @@ const Index = () => {
 
   const handleSubmit = () => {
     if(!inputValue.brandName || !inputValue.productName) alert('無効な値です');
-    createProductMutation({
+    createProduct({
       variables: {
         input: {
           brand_name: inputValue.brandName,
